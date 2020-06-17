@@ -46,18 +46,18 @@ describe('Check if fail function works as expected', () => {
     expect(newItem.durability).toBe(90);
     expect(newItem.enhancement).toBe(15);
   })
+})
 
-  describe('Check if get() works as expected', () => {
-    it('get() should change name appropriately', () => {
-      const item = { name: 'thing', durability: 80, enhancement: 4 }
-      const newItem = enhancer.get(item);
-      expect(newItem.name).toBe('[+4] thing');
-    })
+describe('Check if get() works as expected', () => {
+  it('get() should change name appropriately', () => {
+    const item = { name: 'thing', durability: 80, enhancement: 4 }
+    const newItem = enhancer.get(item);
+    expect(newItem.name).toBe('[+4] thing');
+  })
 
-    it('get() should not change name if enhancement is 0', () => {
-      const item = { name: 'thing', durability: 80, enhancement: 0 }
-      const newItem = enhancer.get(item);
-      expect(newItem.name).toBe('thing');
-    })
+  it('get() should not change name if enhancement is 0', () => {
+    const item = { name: 'thing', durability: 80, enhancement: 0 }
+    const newItem = enhancer.get(item);
+    expect(newItem.name).toBe('thing');
   })
 })
